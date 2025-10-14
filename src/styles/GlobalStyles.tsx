@@ -1,4 +1,5 @@
 import {createGlobalStyle} from "styled-components";
+import {Fonts} from "../assets/fonts/Fonts.tsx";
 
 export const GlobalStyles = createGlobalStyle`
 /* Reset and base styles  */
@@ -15,9 +16,10 @@ export const GlobalStyles = createGlobalStyle`
 }
 
 /* Links */
-//a, a:link, a:visited  {
-//  text-decoration: none;
-//}
+a, a:link, a:visited  {
+  text-decoration: none;
+  color: inherit;
+}
 
 //a:hover  {
 //  text-decoration: none;
@@ -58,4 +60,7 @@ button, input[type="submit"] {
   background: none;
   cursor: pointer;
 }
+
+/* Fonts */
+${Fonts}
 `

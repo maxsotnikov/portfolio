@@ -52,7 +52,11 @@ const Sybscribe = styled.button`
 `
 
 const PrivacyPolicy = styled.span`
-  a:hover {
-    text-decoration: none;
+  //a:hover {
+  //  text-decoration: none;
+  //}
+  
+  a:link {
+    text-decoration: underline;
   }
 `

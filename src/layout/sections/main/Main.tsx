@@ -7,10 +7,10 @@ export const Main = () => {
   return (
     <StyledMain>
       <FlexWrapper>
-        <div>
+        <MainTitle>
           <h2>HELLO I’M ABBY</h2>
           <h1>UI/UX Designer based in UK</h1>
-        </div>
+        </MainTitle>
         <div>
           <Photo src={MainImg} alt={"main-image"}/>
         </div>
@@ -21,6 +21,16 @@ export const Main = () => {
 
 const StyledMain = styled.section`
   background-color: #fff;
+`
+
+const MainTitle = styled.div`
+  h2 {
+    font-family: "Epilogue", sans-serif;
+    font-weight: 800;
+    font-size: 150px;
+    line-height: 1.175;
+    //color: #2d2c2c;
+  }
 `
 
 const Photo = styled.img`
