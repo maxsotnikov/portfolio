@@ -29,7 +29,6 @@ const MainTitle = styled.div`
     font-weight: 800;
     font-size: 150px;
     line-height: 1.175;
-    //color: #2d2c2c;
   }
 `
 
