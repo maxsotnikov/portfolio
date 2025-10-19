@@ -1,4 +1,5 @@
 import styled from "styled-components";
+import {theme} from "../../styles/Theme.ts";
 
 export const Navigation = (props: {navigationItems: Array<string>}) => {
   return (
@@ -7,7 +8,7 @@ export const Navigation = (props: {navigationItems: Array<string>}) => {
         {props.navigationItems.map((item) => {
           return (
             <li>
-              <a href="">{item}</a>
+              <Link href="">{item}</Link>
             </li>
           )
         })}
@@ -19,16 +20,20 @@ export const Navigation = (props: {navigationItems: Array<string>}) => {
 
 const Nav = styled.nav`
   ul {
-    font-family: "Epilogue", sans-serif;
-    font-weight: 400;
-    font-size: 16px;
-    line-height: 1.5;
     display: flex;
     justify-content: flex-end;
-    gap: 32px;
   }
+`
+
+const Link = styled.a`
+  font-family: "Epilogue", sans-serif;
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 1.5;
+  padding: 8px 20px;
   
-  a {
-    text-decoration: none;
+  &:hover {
+    background-color: ${theme.colors.titleFont};
+    color: ${theme.colors.evenFont};
   }
 `

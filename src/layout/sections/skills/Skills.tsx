@@ -1,5 +1,5 @@
 import styled from "styled-components";
-import {FlexWrapper} from "../../../components/FlexWrapper.tsx";
+import {FlexWrapper} from "../../../components/FlexWrapper.ts";
 import {Skill} from "./skill/Skill.tsx";
 
 export const Skills = () => {
@@ -36,6 +36,6 @@ export const Skills = () => {
 };
 
 const StyledSkills = styled.section`
-  min-height: 100vh; 
-  background-color: #131212;
+  //min-height: 100vh;
+  padding: 100px 50px 145px 50px;
 `

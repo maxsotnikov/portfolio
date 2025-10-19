@@ -1,5 +1,5 @@
 import LogoImg from '../../assets/images/logo.webp'
-import {StyledLogo} from "./StyledLogo.tsx";
+import {StyledLogo} from "./StyledLogo.ts";
 
 
 export const Logo = () => {

@@ -1,6 +1,6 @@
-import {FlexWrapper} from "../../../../components/FlexWrapper.tsx";
+import {FlexWrapper} from "../../../components/FlexWrapper.ts";
 import styled from "styled-components";
-import {Icon} from "../../../../components/Icon.tsx";
+import {Icon} from "../../../components/Icon.tsx";
 
 export const SocialMedia = () => {
   return (
@@ -33,11 +33,11 @@ export const SocialMedia = () => {
 };
 
 const Copyright = styled.small`
-  color: #000;
 `
 
 const SocialList = styled.ul`
   display: flex;
+  gap: 12px;
   
 `
 

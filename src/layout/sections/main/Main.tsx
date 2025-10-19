@@ -1,41 +1,77 @@
 import MainImg from "../../../assets/images/main-img.webp"
-import {FlexWrapper} from "../../../components/FlexWrapper.tsx";
 import styled from "styled-components";
+import {Container} from "../../../components/Container.ts";
+import {CircularText} from "../../header/text/Description.tsx";
 
 
 export const Main = () => {
   return (
     <StyledMain>
-      <FlexWrapper>
-        <MainTitle>
-          <h2>HELLO I’M ABBY</h2>
-          <h1>UI/UX Designer based in UK</h1>
-        </MainTitle>
-        <div>
-          <Photo src={MainImg} alt={"main-image"}/>
-        </div>
-      </FlexWrapper>
+      <Container>
+        <MainWrapper>
+          <MainTitle>
+            <h2>Hello<br/> i'm Abby</h2>
+            <div>
+              <CircularText/>
+            </div>
+          </MainTitle>
+          <PhotoWrapper>
+            <Photo src={MainImg} alt={"main-image"}/>
+          </PhotoWrapper>
+        </MainWrapper>
+      </Container>
     </StyledMain>
   );
 };
 
 const StyledMain = styled.section`
-  background-color: #fff;
+  min-height: 100vh;
+  padding: 100px 0;
+  display: flex;
+`
+
+const MainWrapper = styled.div`
+  display: flex;
+  height: 100%;
+
+  position: relative;
+  z-index: 2;
 `
 
 const MainTitle = styled.div`
+  position: relative;
+  z-index: 1;
+  
   h2 {
-    font-family: "Epilogue", sans-serif;
-    font-weight: 800;
     font-size: 150px;
-    line-height: 1.175;
+    line-height: 1.1;
+    min-width: 650px;
+  }
+`
+
+const PhotoWrapper = styled.div`
+  position: relative;
+  left: -115px;
+  top: 10px;
+  z-index: 0;
+  
+  &::before {
+    content: "";
+    display: inline-block;
+    width: 100%;
+    height: 560px;
+    background: #e7e7e7;
+    transform: rotate(-8deg);
+    
+    position: absolute;
+    z-index: -1;
   }
 `
 
 const Photo = styled.img`
-  width: 570px;
-  height: 570px;
+  width: 560px;
+  height: 560px;
   object-fit: cover;
+  transform: rotate(10deg);
+  opacity: 0.9;
 `
-
-

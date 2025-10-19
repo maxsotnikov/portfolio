@@ -1,44 +1,51 @@
 import styled from "styled-components";
-import {FlexWrapper} from "../../../../components/FlexWrapper.tsx";
-import {Logo} from "../../../../components/logo/Logo.tsx";
-import {Navigation} from "../../../../components/navigation/Navigation.tsx";
+import {FlexWrapper} from "../../../components/FlexWrapper.ts";
+import {Logo} from "../../../components/logo/Logo.tsx";
+import {Navigation} from "../../../components/navigation/Navigation.tsx";
+import {theme} from "../../../styles/Theme.ts";
 
 const items = ['Projects', 'About', 'Digital Assets']
 
 export const Contact = () => {
   return (
-    <StyledContact>
-      <FlexWrapper direction="column">
+    <StyledContact justify={"space-between"}>
+      <FlexWrapper direction="column" gap={'20px'}>
         <Logo/>
         <Navigation navigationItems={items}/>
       </FlexWrapper>
-      <StyledForm>
+      <FlexWrapper direction="column" gap={'15px'}>
         <TitleForm>Subscribe to my emailing list</TitleForm>
         <FlexWrapper gap={'16px'}>
           <Field placeholder={'Enter your email'}/>
           <Sybscribe type={'submit'}>Subscribe</Sybscribe>
         </FlexWrapper>
         <PrivacyPolicy>By subscribing you agree to with our <a href={'#'}>Privacy Policy</a></PrivacyPolicy>
-      </StyledForm>
+      </FlexWrapper>
     </StyledContact>
   );
 };
 
-const StyledContact = styled.div`
-  margin-top: 80px;
-  display: flex;
-  justify-content: space-between;
-`
-
-const StyledForm = styled.form`
-  max-width: 400px;
-  width: 100%;
-  display: flex;
-  flex-direction: column;
+const StyledContact = styled(FlexWrapper)`
+  position: relative;
+  margin-bottom: 130px;
+  
+  &::before {
+    content: '';
+    display: inline-block;
+    width: 1280px;
+    height: 1px;
+    background-color: ${theme.colors.oddFont};
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+    bottom: -65px;
+  }
 `
 
 const TitleForm = styled.span`
-  color: #000;
+  font-weight: 700;
+  font-size: 16px;
+  line-height: 1.5;
 `
 
 const Field = styled.input`
@@ -52,9 +59,9 @@ const Sybscribe = styled.button`
 `
 
 const PrivacyPolicy = styled.span`
-  //a:hover {
-  //  text-decoration: none;
-  //}
+  font-weight: 400;
+  font-size: 12px;
+  line-height: 1.5;
   
   a:link {
     text-decoration: underline;
