@@ -7,6 +7,7 @@ import {theme} from "../../styles/Theme.ts";
 import {MobileMenu} from "./mobile-menu/MobileMenu.tsx";
 
 const items = ["Projects", "About", "Digital Assets", "Let’s Talk"]
+const mobileItems = ['Projects', 'About', 'Digital Assets']
 
 export const Header = () => {
   return (
@@ -19,9 +20,8 @@ export const Header = () => {
           </NavigationWrapper>
           <MobileWrapper>
             <LetsTalkLink>Let's Talk</LetsTalkLink>
-            <MobileMenu></MobileMenu>
+            <MobileMenu navigationItems={mobileItems}></MobileMenu>
           </MobileWrapper>
-
         </FlexWrapper>
       </Container>
     </StyledHeader>
@@ -52,7 +52,6 @@ const LetsTalkLink = styled.a`
   display: none;
   @media ${theme.media.tablet} {
     display: block;
-    font-family: "Epilogue", sans-serif;
     font-weight: 400;
     font-size: 16px;
     line-height: 1.5;

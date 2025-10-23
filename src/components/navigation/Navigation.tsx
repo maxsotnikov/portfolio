@@ -21,7 +21,6 @@ export const Navigation = (props: { navigationItems: Array<string> }) => {
 const Nav = styled.nav`
   ul {
     display: flex;
-    justify-content: flex-end;
   }
 `
 

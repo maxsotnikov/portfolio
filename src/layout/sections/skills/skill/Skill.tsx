@@ -24,8 +24,9 @@ export const Skill = (props: SkillProps) => {
 };
 
 const StyledSkill = styled.div`
-  width: 30%;
-  margin: 10px;
+  //width: 30%;
+  flex: 1 1 30%;
+  min-width: 440px;
 `
 
 const NumberWrapper = styled.div`
