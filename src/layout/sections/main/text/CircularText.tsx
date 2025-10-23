@@ -1,13 +1,5 @@
-import { font } from "../../../../styles/Common.ts";
 import {theme} from "../../../../styles/Theme.ts";
-import styled from "styled-components";
 
-const StyledText = styled('text')`
-  font-weight: 300;
-  fill: ${theme.colors.titleFont};
-  line-height: 1.1;
-  font-size: calc((100vw - 375px) / (1440 - 375) * (51 - 28) + 28px);
-`;
 
 export const CircularText = () => {
   return (
@@ -17,13 +9,10 @@ export const CircularText = () => {
         d="M 0,0 A 360,255 0 0 0 650,0"
         fill="transparent"
       />
-      {/*<text style={{*/}
-      {/*  // fontSize: '51px',*/}
-      {/*  // fontWeight: '300',*/}
-      {/*}}>*/}
-      {/*  */}
-
-      <StyledText>
+      <text style={{
+        fontSize: '51px',
+        fontWeight: '300',
+      }}>
         <textPath href="#curve-up" startOffset="50%" textAnchor="middle">
           <tspan style={{ fontWeight: '600', stroke:`${theme.colors.oddFont}`, fill: `${theme.colors.evenFont}` }}>UI</tspan>
           /
@@ -35,9 +24,7 @@ export const CircularText = () => {
           <tspan style={{ fontWeight: '800', fill: `${theme.colors.titleFont}` }}>r </tspan>
           based in UK
         </textPath>
-      </StyledText>
-
-      {/*</text>*/}
+      </text>
     </svg>
   );
 };
