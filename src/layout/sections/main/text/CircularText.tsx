@@ -1,4 +1,4 @@
-import {theme} from "../../../styles/Theme.ts";
+import {theme} from "../../../../styles/Theme.ts";
 
 
 export const CircularText = () => {
@@ -6,7 +6,7 @@ export const CircularText = () => {
     <svg width="650" height="200" viewBox="0 0 650 200">
       <path
         id="curve-up"
-        d="M 0,0 A 360,250 0 0 0 650,0"
+        d="M 0,0 A 360,255 0 0 0 650,0"
         fill="transparent"
       />
       <text style={{
