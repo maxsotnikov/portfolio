@@ -70,7 +70,7 @@ const Title = styled.h4`
   font-size: 16px;
 `
 
-const FirstProjectTitle = styled.h3`
+const FirstProjectTitle = styled.h4`
   font-weight: 200;
   font-size: 45px;
   line-height: 1.2;

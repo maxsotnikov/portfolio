@@ -1,14 +1,16 @@
 import MainImg from "../../../assets/images/main-img.webp"
 import styled from "styled-components";
 import {Container} from "../../../components/Container.ts";
-import {CircularText} from "../../header/text/Description.tsx";
+import {CircularText} from "./text/CircularText.tsx";
+import {FlexWrapper} from "../../../components/FlexWrapper.ts";
 
 
 export const Main = () => {
   return (
     <StyledMain>
       <Container>
-        <MainWrapper>
+        {/*<MainWrapper>*/}
+        <FlexWrapper>
           <MainTitle>
             <h2>Hello<br/> i'm Abby</h2>
             <div>
@@ -18,7 +20,9 @@ export const Main = () => {
           <PhotoWrapper>
             <Photo src={MainImg} alt={"main-image"}/>
           </PhotoWrapper>
-        </MainWrapper>
+        </FlexWrapper>
+
+        {/*</MainWrapper>*/}
       </Container>
     </StyledMain>
   );
@@ -30,13 +34,13 @@ const StyledMain = styled.section`
   display: flex;
 `
 
-const MainWrapper = styled.div`
-  display: flex;
-  height: 100%;
-
-  position: relative;
-  z-index: 2;
-`
+// const MainWrapper = styled.div`
+//   display: flex;
+//   height: 100%;
+//
+//   position: relative;
+//   z-index: 2;
+// `
 
 const MainTitle = styled.div`
   position: relative;

@@ -11,7 +11,9 @@ export const Skill = (props: SkillProps) => {
   return (
     <StyledSkill>
       <FlexWrapper gap="35px">
-        <SkillNumber>{props.number}</SkillNumber>
+        <NumberWrapper>
+          <SkillNumber>{props.number}</SkillNumber>
+        </NumberWrapper>
         <FlexWrapper direction="column" gap="5px">
           <SkillTitle>{props.title}</SkillTitle>
           <SkillDescription>{props.text}</SkillDescription>
@@ -26,7 +28,13 @@ const StyledSkill = styled.div`
   margin: 10px;
 `
 
+const NumberWrapper = styled.div`
+  width: 90px;
+  flex-shrink: 0;
+`
+
 const SkillNumber = styled.span`
+  display: block;
   font-weight: 100;
   font-size: 70px;
   margin-top: 17px;

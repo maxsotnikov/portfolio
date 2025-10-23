@@ -42,7 +42,7 @@ const StyledContact = styled(FlexWrapper)`
   }
 `
 
-const TitleForm = styled.span`
+const TitleForm = styled.h4`
   font-weight: 700;
   font-size: 16px;
   line-height: 1.5;
@@ -56,6 +56,11 @@ const Field = styled.input`
 const Sybscribe = styled.button`
   border: 1px solid #000;
   padding: 12px 24px;
+  
+  &:hover {
+    background-color: ${theme.colors.titleFont};
+    color: ${theme.colors.evenFont};
+  }
 `
 
 const PrivacyPolicy = styled.span`

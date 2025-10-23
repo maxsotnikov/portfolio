@@ -1,7 +1,7 @@
 import styled from "styled-components";
 import {theme} from "../../styles/Theme.ts";
 
-export const Navigation = (props: {navigationItems: Array<string>}) => {
+export const Navigation = (props: { navigationItems: Array<string> }) => {
   return (
     <Nav>
       <ul>
@@ -31,7 +31,7 @@ const Link = styled.a`
   font-size: 16px;
   line-height: 1.5;
   padding: 8px 20px;
-  
+
   &:hover {
     background-color: ${theme.colors.titleFont};
     color: ${theme.colors.evenFont};

@@ -1,17 +1,12 @@
-export const Icon = (props: { iconId: string }) => {
+type IconProps = {
+  iconId: string;
+  viewbox?: string;
+}
+
+export const Icon = ({iconId, viewbox }: IconProps) => {
   return (
-    <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-      <use xlinkHref={`sprite.svg#${props.iconId}`}/>
+    <svg width="24" height="24" viewBox= {`${viewbox}`} fill="none" xmlns="http://www.w3.org/2000/svg">
+      <use xlinkHref={`sprite.svg#${iconId}`}/>
     </svg>
   );
 };
-
-const ImgSvg = styled.svg`
-  width:  24px;
-  height:  24px;
-  viewBox:  0 0 24px 24px;
-  fill: none;
-  xmlns: "http://www.w3.org/2000/svg";
-  display: inline-block;
-  text-align: center;
-`

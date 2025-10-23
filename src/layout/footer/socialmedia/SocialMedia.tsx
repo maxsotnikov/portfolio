@@ -9,7 +9,7 @@ export const SocialMedia = () => {
       <SocialList>
         <SocialItem>
           <SocialLink href={'#'}>
-            <Icon iconId={'facebook'}/>
+            <Icon iconId={'facebook'} viewbox={'0 0 12 24'}/>
           </SocialLink>
         </SocialItem>
         <SocialItem>
