@@ -1,5 +1,6 @@
 import styled from "styled-components";
 import {theme} from "../../styles/Theme.ts";
+import {font} from "../../styles/Common.ts";
 
 export const Navigation = (props: { navigationItems: Array<string> }) => {
   return (
@@ -25,11 +26,8 @@ const Nav = styled.nav`
 `
 
 const Link = styled.a`
-  font-family: "Epilogue", sans-serif;
-  font-weight: 400;
-  font-size: 16px;
-  line-height: 1.5;
   padding: 8px 20px;
+  ${font({weight: 400, color: theme.colors.titleFont, Fmax: 16, Fmin: 14})}
 
   &:hover {
     background-color: ${theme.colors.titleFont};

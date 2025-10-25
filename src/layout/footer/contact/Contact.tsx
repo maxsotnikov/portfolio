@@ -8,37 +8,73 @@ const items = ['Projects', 'About', 'Digital Assets']
 
 export const Contact = () => {
   return (
-    <StyledContact justify={"space-between"}>
-      <FlexWrapper direction="column" gap={'20px'}>
+    <StyledContact>
+      <NavigationWrapper>
         <Logo/>
         <Navigation navigationItems={items}/>
-      </FlexWrapper>
-      <FlexWrapper direction="column" gap={'15px'}>
+      </NavigationWrapper>
+      <SubscribeWrapper>
         <TitleForm>Subscribe to my emailing list</TitleForm>
-        <FlexWrapper gap={'16px'}>
+        <FlexWrapper gap={'16px'} wrap={'wrap'}>
           <Field placeholder={'Enter your email'}/>
           <Sybscribe type={'submit'}>Subscribe</Sybscribe>
         </FlexWrapper>
         <PrivacyPolicy>By subscribing you agree to with our <a href={'#'}>Privacy Policy</a></PrivacyPolicy>
-      </FlexWrapper>
+      </SubscribeWrapper>
     </StyledContact>
   );
 };
 
-const StyledContact = styled(FlexWrapper)`
+const StyledContact = styled.div`
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
   position: relative;
   margin-bottom: 130px;
+  
+  @media ${theme.media.tablet} {
+    margin-bottom: 45px;
+  }
+  
+  @media ${theme.media.mobile} {
+    display: block;
+  }
   
   &::before {
     content: '';
     display: inline-block;
-    width: 1280px;
+    width: 100%;
     height: 1px;
     background-color: ${theme.colors.oddFont};
     position: absolute;
     left: 50%;
     transform: translateX(-50%);
     bottom: -65px;
+    
+    @media ${theme.media.tablet} {
+      bottom: -22px;
+    }
+  }  
+`
+
+const NavigationWrapper = styled.div`
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  
+  @media ${theme.media.tablet} {
+    gap: 10px;
+  }
+`
+
+const SubscribeWrapper = styled.div`
+  padding: 20px;
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+  
+  @media ${theme.media.tablet} {
+    padding: 26px 0 22px 20px;
   }
 `
 
@@ -51,6 +87,10 @@ const TitleForm = styled.h4`
 const Field = styled.input`
   border: 1px solid #000;
   padding: 12px;
+  
+  @media ${theme.media.mobile} {
+    width: 100%;
+  }
 `
 
 const Sybscribe = styled.button`

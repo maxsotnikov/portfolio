@@ -1,7 +1,6 @@
 import styled from "styled-components";
 import {AboutTitleWrapper} from "./about-title-wrapper/AboutTitleWrapper.tsx";
 import Image from "../../../assets/images/main-img.webp"
-import {FlexWrapper} from "../../../components/FlexWrapper.ts";
 import {AboutDescription} from "./about-description/AboutDescription.tsx";
 import {Container} from "../../../components/Container.ts";
 import {theme} from "../../../styles/Theme.ts";
@@ -51,7 +50,7 @@ const LeftColumnWrapper = styled.div`
 
 const FirstPhoto  = styled.img`
   max-width: 532px;
-  //width: 100%;
+  width: 100%;
   //max-height: 498px;
   object-fit: cover;
 `
@@ -64,12 +63,19 @@ const RightColumnWrapper = styled.div`
   @media ${theme.media.desktop2} {
     padding-top: 40px;
     gap: 60px;
+    align-items: center;
+    
   }
 `
 
 const SecondPhoto  = styled.img`
   max-width: 440px;
-  //width: 100%;
+  width: 100%;
   //height: 412px;
   object-fit: cover;
+  
+  @media ${theme.media.mobile} {
+    max-width: 275px;
+    width: 100%;
+  }
 `
