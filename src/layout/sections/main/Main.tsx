@@ -14,7 +14,7 @@ export const Main = () => {
         <MainWrapper>
         {/*<FlexWrapper>*/}
           <MainTitle>
-            <h2>Hello<br/> i'm Abby</h2>
+            <h2>Hello<br/> <span>i'm Abby</span> </h2>
             <div>
               <CircularText/>
             </div>
@@ -23,7 +23,6 @@ export const Main = () => {
             <Photo src={MainImg} alt={"main-image"}/>
           </PhotoWrapper>
         {/*</FlexWrapper>*/}
-
         </MainWrapper>
       </Container>
     </StyledMain>
@@ -31,8 +30,8 @@ export const Main = () => {
 };
 
 const StyledMain = styled.section`
-  min-height: 100vh;
-  padding: 100px 0;
+  //min-height: 100vh;
+  padding: 50px 0 100px;
   display: flex;
 `
 
@@ -40,13 +39,17 @@ const MainWrapper = styled.div`
   display: flex;
   height: 100%;
   align-items: center;
+  justify-content: space-between;
   
-  @media ${theme.media.desktop} {
+  @media ${theme.media.desktop1} {
     flex-direction: column; /* текст сверху, фото снизу */
-    //justify-content: center;
-    align-items: flex-start;
-    //text-align: center;
+    justify-content: center;
+    align-items: center;
     flex-wrap: wrap;
+  }
+
+  @media ${theme.media.mobile} {
+    align-items: flex-start;
   }
 `
 
@@ -56,9 +59,18 @@ const MainTitle = styled.div`
   
   h2 {
     ${font({weight: 800, color: theme.colors.titleFont, lineHeight: 1.1, Fmax: 150, Fmin: 75})}
-    //font-size: 150px;
-    //line-height: 1.1;
-    //min-width: 650px;
+    
+    @media ${theme.media.desktop1} {
+    text-align: center;
+  }
+
+    @media ${theme.media.mobile} {
+      text-align: left;
+    }
+    
+    span {
+      white-space: nowrap;
+    }
   }
 `
 
@@ -68,6 +80,15 @@ const PhotoWrapper = styled.div`
   top: 10px;
   z-index: 0;
 
+  @media ${theme.media.desktop1} {
+    position: static;
+  }
+
+  @media ${theme.media.desktop1} {
+    position: relative;
+    left: 15px;
+  }
+  
   &::before {
     content: "";
     display: inline-block;
@@ -83,10 +104,6 @@ const PhotoWrapper = styled.div`
       width: 300px;
       height: 300px;
     }
-  }
-  
-  @media ${theme.media.desktop} {
-    padding: 0 0 0 175px;
   }
 `
 

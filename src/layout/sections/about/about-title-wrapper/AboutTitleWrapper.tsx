@@ -1,5 +1,7 @@
 import styled from "styled-components";
 import {FlexWrapper} from "../../../../components/FlexWrapper.ts";
+import {font} from "../../../../styles/Common.ts";
+import {theme} from "../../../../styles/Theme.ts";
 
 type AboutTitleWrapperProps = {
   title: string;
@@ -22,8 +24,6 @@ const AboutMe = styled.span`
 
 const AboutTitle = styled.h3`
   max-width: 422px;
-  font-weight: 254;
-  font-size: 48px;
-  line-height: 1.2;
   text-transform: uppercase;
+  ${font({weight: 200, color: theme.colors.evenFont, lineHeight: 1.2, Fmax: 48, Fmin: 43})}
 `

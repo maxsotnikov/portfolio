@@ -4,20 +4,21 @@ import Image from "../../../assets/images/main-img.webp"
 import {FlexWrapper} from "../../../components/FlexWrapper.ts";
 import {AboutDescription} from "./about-description/AboutDescription.tsx";
 import {Container} from "../../../components/Container.ts";
+import {theme} from "../../../styles/Theme.ts";
 
 export const About = () => {
   return (
     <StyledAbout>
       <Container>
         <AboutWrapper>
-          <FlexWrapper direction="column" gap={'238px'}>
+          <LeftColumnWrapper>
             <AboutTitleWrapper title={'I look at usual things with my unsual eyes.'} />
             <FirstPhoto src={Image} alt="" />
-          </FlexWrapper>
-          <FlexWrapper direction="column">
+          </LeftColumnWrapper>
+          <RightColumnWrapper>
             <AboutDescription/>
             <SecondPhoto src={Image} alt="" />
-          </FlexWrapper>
+          </RightColumnWrapper>
         </AboutWrapper>
       </Container>
     </StyledAbout>
@@ -27,21 +28,48 @@ export const About = () => {
 const StyledAbout = styled.section`
   padding: 110px 0 205px;
   
+  @media ${theme.media.desktop2} {
+    padding: 50px 0 95px;
+  }
 `
 
 const AboutWrapper = styled.div`
   display: flex;
   justify-content: space-between;
+  flex-wrap: wrap;
+`
+
+const LeftColumnWrapper = styled.div`
+  display: flex;
+  flex-direction: column;
+  gap: 238px;
+  
+  @media ${theme.media.desktop2} {
+    gap: 30px;
+  }
 `
 
 const FirstPhoto  = styled.img`
-  width: 532px;
-  height: 498px;
+  max-width: 532px;
+  //width: 100%;
+  //max-height: 498px;
   object-fit: cover;
 `
 
+const RightColumnWrapper = styled.div`
+  display: flex;
+  flex-direction: column;
+  gap: 310px;
+  
+  @media ${theme.media.desktop2} {
+    padding-top: 40px;
+    gap: 60px;
+  }
+`
+
 const SecondPhoto  = styled.img`
-  width: 440px;
-  height: 412px;
+  max-width: 440px;
+  //width: 100%;
+  //height: 412px;
   object-fit: cover;
 `

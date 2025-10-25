@@ -1,4 +1,5 @@
 import styled from "styled-components";
+import {theme} from "../../../../styles/Theme.ts";
 
 export const AboutDescription = () => {
   return (
@@ -19,10 +20,18 @@ const StyledAboutDescription = styled.p`
   font-size: 18px;
   line-height: 1.5;
   max-width: 437px;
-  height: 432px;
-  margin-bottom: 310px;
+  
+  @media ${theme.media.desktop2} {
+    margin-bottom: 0;
+  }
 `
 
 const Text = styled.p`
   margin-bottom: 20px;
+  
+  @media ${theme.media.desktop2} {
+    &:last-child {
+      margin-bottom: 0;
+    }
+  }
 `
