@@ -26,8 +26,6 @@ export const Skill = (props: SkillProps) => {
 };
 
 const StyledSkill = styled.div`
-  width: 430px;
-  flex-grow: 1;
   
   & > ${FlexWrapper} {
     @media ${theme.media.mobile} {
@@ -37,26 +35,19 @@ const StyledSkill = styled.div`
 `
 
 const NumberWrapper = styled.div`
-  //width: 90px;
-  flex-shrink: 1;
   
-  // @media ${theme.media.desktop3} {
-  //   width: 90px;
-  // }
-  
-  // @media ${theme.media.mobile} {
-  //   width: 58px;
-  // }
-  
-  // @media ${theme.media.desktop1} {
-  //   max-width: 90px;
-  // }
 `
 
 const SkillNumber = styled.span`
   display: block;
   margin-top: 17px;
   ${font({weight: 100, color: theme.colors.evenFont, Fmax: 70, Fmin: 45})}
+  max-width: 90px;
+    
+  @media ${theme.media.desktop3} {
+    min-width: 90px;
+    max-width: none;
+  }
 `
 
 const SkillTitle = styled.h3`

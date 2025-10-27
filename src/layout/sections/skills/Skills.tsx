@@ -1,12 +1,11 @@
 import styled from "styled-components";
-import {FlexWrapper} from "../../../components/FlexWrapper.ts";
 import {Skill} from "./skill/Skill.tsx";
 import {theme} from "../../../styles/Theme.ts";
 
 export const Skills = () => {
   return (
     <StyledSkills>
-      <FlexWrapper  gap={'60px'} wrap={'wrap'}  >
+      <SkillWrapper   >
         <Skill number={'01.'}
                title={'React'}
                text={'consectetur adipiscing elit duis tristique sollicitudin nibh sit amet commodo nulla facilisi nullam vehicula ipsum a arcu cursus vitae congue'}
@@ -31,7 +30,7 @@ export const Skills = () => {
                title={'Design'}
                text={'consectetur adipiscing elit duis tristique sollicitudin nibh sit amet commodo nulla facilisi nullam vehicula ipsum a arcu cursus vitae congue'}
         />
-      </FlexWrapper>
+      </SkillWrapper>
      </StyledSkills>
   );
 };
@@ -39,12 +38,25 @@ export const Skills = () => {
 const StyledSkills = styled.section`
   padding: 100px 50px 145px 50px;
   
-  @media ${theme.media.mobile} {
+  @media ${theme.media.tablet} {
     padding: 40px 15px;
-    
-    & > ${FlexWrapper} {
-      gap: 40px;
-    }
   }
+`
+
+const SkillWrapper = styled.div`
+  max-width: 2200px;
+  margin: 0 auto;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  row-gap: 60px;
+  column-gap: 20px;
   
+  @media ${theme.media.desktop2} {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  @media ${theme.media.tablet} {
+    grid-template-columns: repeat(1, 1fr);
+    row-gap: 40px;
+  }
 `

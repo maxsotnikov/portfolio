@@ -15,6 +15,6 @@ export const theme = {
     mobile2: "screen and (max-width: 405px)",
     desktop1: "screen and (max-width: 1037px)",
     desktop2: "screen and (max-width: 1018px)",
-    desktop3: "screen and (max-width: 1600px)",
+    desktop3: "screen and (min-width: 1440px)",
   }
 }
