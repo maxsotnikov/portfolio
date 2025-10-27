@@ -73,9 +73,9 @@ const SubscribeWrapper = styled.div`
   flex-direction: column;
   gap: 15px;
   
-  @media ${theme.media.tablet} {
-    padding: 26px 0 22px 20px;
-  }
+  // @media ${theme.media.tablet} {
+  //   padding: 26px 0 22px 20px;
+  // }
 `
 
 const TitleForm = styled.h4`
@@ -88,7 +88,7 @@ const Field = styled.input`
   border: 1px solid #000;
   padding: 12px;
   
-  @media ${theme.media.mobile} {
+  @media ${theme.media.mobile2} {
     width: 100%;
   }
 `

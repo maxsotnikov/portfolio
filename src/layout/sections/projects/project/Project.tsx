@@ -1,7 +1,7 @@
 import styled from "styled-components";
 import {theme} from "../../../../styles/Theme.ts";
 import {font} from "../../../../styles/Common.ts";
-import Btn from "../../../../assets/images/Vector.svg"
+import {ArrowBtn} from "../../../../components/ArrowBtn.tsx";
 
 type ProjectProps = {
   img: string;
@@ -9,7 +9,6 @@ type ProjectProps = {
   firstProjectTitle: string;
   secondProjectTitle: string;
   description: string;
-
 }
 
 export const Project = (props: ProjectProps) => {
@@ -23,7 +22,7 @@ export const Project = (props: ProjectProps) => {
         </TitleWrapper>
         <DescriptionWrapper>
           <Description>{props.description}</Description>
-          <Link href={'#'}>View More <img src={Btn}/></Link>
+          <Link href={'#'}>View More <ArrowBtn iconId={'arrowBtn'}/></Link>
         </DescriptionWrapper>
       </ContentWrapper>
     </StyledProject>
@@ -73,7 +72,6 @@ const TitleWrapper = styled.div`
   @media ${theme.media.tablet} {
     padding: 0;
   }
-  
 `
 
 const Title = styled.h4`
@@ -105,5 +103,7 @@ const Description = styled.p`
 `
 
 const Link = styled.a`
-
+  display: flex;
+  align-items: center;
+  gap: 4px;
 `
