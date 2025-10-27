@@ -51,7 +51,6 @@ const LeftColumnWrapper = styled.div`
 const FirstPhoto  = styled.img`
   max-width: 532px;
   width: 100%;
-  //max-height: 498px;
   object-fit: cover;
 `
 
@@ -71,7 +70,6 @@ const RightColumnWrapper = styled.div`
 const SecondPhoto  = styled.img`
   max-width: 440px;
   width: 100%;
-  //height: 412px;
   object-fit: cover;
   
   @media ${theme.media.mobile} {

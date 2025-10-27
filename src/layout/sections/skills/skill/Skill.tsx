@@ -38,15 +38,19 @@ const StyledSkill = styled.div`
 
 const NumberWrapper = styled.div`
   //width: 90px;
-  flex-shrink: 0;
+  flex-shrink: 1;
   
-  @media ${theme.media.mobile} {
-    width: 58px;
-  }
+  // @media ${theme.media.desktop3} {
+  //   width: 90px;
+  // }
   
-  @media ${theme.media.desktop} {
-    max-width: 90px;
-  }
+  // @media ${theme.media.mobile} {
+  //   width: 58px;
+  // }
+  
+  // @media ${theme.media.desktop1} {
+  //   max-width: 90px;
+  // }
 `
 
 const SkillNumber = styled.span`
@@ -57,12 +61,8 @@ const SkillNumber = styled.span`
 
 const SkillTitle = styled.h3`
   ${font({weight: 300, color: theme.colors.evenFont, Fmax: 30, Fmin: 25})}
-  
 `
 
 const SkillDescription = styled.p`
-  //font-weight: 200;
-  //font-size: 18px;
-  //line-height: 1.2;
   ${font({weight: 200, color: theme.colors.evenFont, lineHeight: 1.2, Fmax: 18, Fmin: 14})}
 `

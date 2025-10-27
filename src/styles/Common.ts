@@ -1,4 +1,3 @@
-import {theme} from "./Theme.ts";
 
 type  FontTypeProps = {
   family?: string
@@ -12,7 +11,7 @@ type  FontTypeProps = {
 export const font = ({family, weight, color, lineHeight, Fmin, Fmax} : FontTypeProps) =>`
   font-family: ${family ||  "Epilogue"};
   font-weight: ${weight || 400};
-  color: ${color || theme.colors.oddFont};
+  color: ${color};
   line-height: ${lineHeight || 1.5};
-  font-size: calc( (100vw - 375px)/(1540 - 375) * (${Fmax} - ${Fmin}) + ${Fmin}px);
+  font-size: calc( (100vw - 375px)/(1440 - 375) * (${Fmax} - ${Fmin}) + ${Fmin}px);
 `

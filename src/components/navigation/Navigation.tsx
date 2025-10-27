@@ -15,13 +15,16 @@ export const Navigation = (props: { navigationItems: Array<string> }) => {
         })}
       </ul>
     </Nav>
-
   );
 };
 
 const Nav = styled.nav`
   ul {
     display: flex;
+    
+    li {
+     display: flex;
+    }
   }
 `
 

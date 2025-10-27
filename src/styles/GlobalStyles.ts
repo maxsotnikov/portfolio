@@ -18,6 +18,7 @@ export const GlobalStyles = createGlobalStyle`
   
   body {
     font-family: "Epilogue",sans-serif;
+    //min-width: 375px;
   }
   
   /* Links */
@@ -25,10 +26,6 @@ export const GlobalStyles = createGlobalStyle`
     text-decoration: none;
     color: inherit;
   }
-  
-  //a:hover  {
-  //  text-decoration: none;
-  //}
   
   /* Common */
   aside, nav, footer, header, section, main {
@@ -49,12 +46,6 @@ export const GlobalStyles = createGlobalStyle`
     list-style: none;
   }
   
-  //img {
-  //  vertical-align: top;
-  //  max-width: 100%;
-  //  height: auto;
-  //}
-  
   /* Form */
   input, textarea, button, select {
     font-family: inherit;
@@ -71,21 +62,14 @@ export const GlobalStyles = createGlobalStyle`
     cursor: pointer;
   }
 
-  /* Fonts */
+  /* ----------------Fonts ----------------*/
   ${Fonts}
 
-  header, section, footer:nth-of-type(odd) {
+  header, section:nth-of-type(odd), footer {
     background-color: ${theme.colors.oddBg};
-    color: ${theme.colors.oddFont};
-  
-  h2 {
-    color: ${theme.colors.titleFont};
-  }
-  
 }
 
   section:nth-of-type(even) {
     background-color: ${theme.colors.evenBg};
-    color: ${theme.colors.evenFont};
 }
 `

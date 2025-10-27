@@ -1,14 +1,17 @@
 import styled, {css} from "styled-components";
 import {theme} from "../../../styles/Theme.ts";
 import {MobileSocialMedia} from "./MobileSocialMedia.tsx";
+import {useState} from "react";
 
 export const MobileMenu = (props: { navigationItems: Array<string> }) => {
+  const [menuIsOpen, setmenuIsOpen] = useState(false)
+  const onBurgerBtnClick = () => {setmenuIsOpen(!menuIsOpen)}
   return (
     <StyledMobileMenu>
-      <BurgerButton isOpen={false}>
+      <BurgerButton isOpen={menuIsOpen} onClick={onBurgerBtnClick}>
         <span></span>
       </BurgerButton>
-      <MobileMenuPopup isOpen={false}>
+      <MobileMenuPopup isOpen={menuIsOpen} onClick={ () => {(setmenuIsOpen(false))}}>
         <Menu>
           {props.navigationItems.map((item) => {
             return (
@@ -40,7 +43,7 @@ const BurgerButton = styled.button<{ isOpen: boolean }>`
   z-index: 100;
 
   span {
-    display: block;
+    //display: block;
     width: 18px;
     height: 1px;
     background-color: #292D32;
@@ -53,13 +56,14 @@ const BurgerButton = styled.button<{ isOpen: boolean }>`
 
   &::before {
     content: "";
-    display: block;
+    //display: block;
     width: 18px;
     height: 1px;
     background-color: #292D32;
     border-radius: 1px;
     position: absolute;
     transform: translateY(-5px);
+    inset: 0;
     
     ${(props) => props.isOpen && css<{isOpen: boolean}>`
     transform: rotate(-45deg) translateY(0);
@@ -68,13 +72,14 @@ const BurgerButton = styled.button<{ isOpen: boolean }>`
     
   &::after {
     content: "";
-    display: block;
+    //display: inline-block;
     width: 18px;
     height: 1px;
     background-color: #292D32;
     border-radius: 1px;
     position: absolute;
     transform: translateY(5px);
+    inset: 0;
       
     ${(props) => props.isOpen && css<{isOpen: boolean}>`
       transform: rotate(45deg) translateY(0);

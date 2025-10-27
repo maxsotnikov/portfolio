@@ -1,6 +1,7 @@
 import styled from "styled-components";
 import {theme} from "../../../../styles/Theme.ts";
 import {font} from "../../../../styles/Common.ts";
+import Btn from "../../../../assets/images/Vector.svg"
 
 type ProjectProps = {
   img: string;
@@ -22,7 +23,7 @@ export const Project = (props: ProjectProps) => {
         </TitleWrapper>
         <DescriptionWrapper>
           <Description>{props.description}</Description>
-          <Link href={'#'}>View More</Link>
+          <Link href={'#'}>View More <img src={Btn}/></Link>
         </DescriptionWrapper>
       </ContentWrapper>
     </StyledProject>
@@ -101,10 +102,8 @@ const DescriptionWrapper = styled.div`
 const Description = styled.p`
   margin-bottom: 40px;
   ${font({weight: 400, color: theme.colors.evenFont, Fmax: 18, Fmin: 17})}
-  
 `
 
 const Link = styled.a`
 
 `
-

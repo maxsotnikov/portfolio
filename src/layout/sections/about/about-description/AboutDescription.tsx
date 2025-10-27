@@ -19,8 +19,9 @@ const StyledAboutDescription = styled.p`
   font-weight: 400;
   font-size: 18px;
   line-height: 1.5;
+  color: ${theme.colors.evenFont};
   max-width: 437px;
-  
+    
   @media ${theme.media.desktop2} {
     margin-bottom: 0;
   }

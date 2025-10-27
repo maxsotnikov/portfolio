@@ -30,6 +30,10 @@ export const Header = () => {
 
 const StyledHeader = styled.header`
   padding: 20px 0;
+  
+  @media ${theme.media.tablet} {
+    padding: 0;
+  }
 `
 
 const NavigationWrapper = styled.div`
@@ -44,7 +48,7 @@ const MobileWrapper = styled(FlexWrapper)`
   @media ${theme.media.tablet} {
     display: flex;
     align-items: center;
-    gap: 35px;
+    gap: 15px;
   }
 `
 

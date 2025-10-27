@@ -12,7 +12,7 @@ import robotoRegular from "./roboto/Roboto-Regular.woff2"
 
 
 export const Fonts = css`
-  /* Epilogue Font Family */
+  /* ---------------- Epilogue Font Family ---------------- */
   @font-face {
     font-family: "Epilogue";
     src: url(${epilogueThin}) format("woff2");
@@ -77,7 +77,7 @@ export const Fonts = css`
     font-display: swap;
   }
   
-  /* Roboto Font Family */
+  /* ---------------- Roboto Font Family ---------------- */
   @font-face {
     font-family: "Roboto";
     src: url(${robotoLight}) format("woff2");

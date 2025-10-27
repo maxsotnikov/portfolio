@@ -20,6 +20,7 @@ const AboutMe = styled.span`
   font-weight: 900;
   font-size: 16px;
   line-height: 1.5;
+  color: ${theme.colors.evenFont};
 `
 
 const AboutTitle = styled.h3`

@@ -68,7 +68,7 @@ const NavigationWrapper = styled.div`
 `
 
 const SubscribeWrapper = styled.div`
-  padding: 20px;
+  padding-top: 12px;
   display: flex;
   flex-direction: column;
   gap: 15px;

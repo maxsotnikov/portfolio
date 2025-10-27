@@ -1,6 +1,6 @@
 import styled from "styled-components";
-import {theme} from "../../../styles/Theme.ts";
 import {font} from "../../../styles/Common.ts";
+import {theme} from "../../../styles/Theme.ts";
 
 export const SectionTitle = styled.h2`
   text-transform: uppercase;

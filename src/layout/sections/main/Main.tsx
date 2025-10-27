@@ -2,7 +2,6 @@ import MainImg from "../../../assets/images/main-img.webp"
 import styled from "styled-components";
 import {Container} from "../../../components/Container.ts";
 import {CircularText} from "./text/CircularText.tsx";
-// import {FlexWrapper} from "../../../components/FlexWrapper.ts";
 import {theme} from "../../../styles/Theme.ts";
 import {font} from "../../../styles/Common.ts";
 
@@ -12,7 +11,6 @@ export const Main = () => {
     <StyledMain>
       <Container>
         <MainWrapper>
-        {/*<FlexWrapper>*/}
           <MainTitle>
             <h2>Hello<br/> <span>i'm Abby</span> </h2>
             <div>
@@ -22,7 +20,6 @@ export const Main = () => {
           <PhotoWrapper>
             <Photo src={MainImg} alt={"main-image"}/>
           </PhotoWrapper>
-        {/*</FlexWrapper>*/}
         </MainWrapper>
       </Container>
     </StyledMain>
@@ -31,24 +28,28 @@ export const Main = () => {
 
 const StyledMain = styled.section`
   //min-height: 100vh;
-  padding: 50px 0 100px;
+  padding: 50px 0 135px;
   display: flex;
+  
+  @media ${theme.media.tablet} {
+    padding: 60px 0 125px;
+  }
 `
 
 const MainWrapper = styled.div`
   display: flex;
   height: 100%;
   align-items: center;
-  justify-content: space-between;
+  //justify-content: space-between;
   
   @media ${theme.media.desktop1} {
-    flex-direction: column; /* текст сверху, фото снизу */
+    flex-direction: column;
     justify-content: center;
     align-items: center;
     flex-wrap: wrap;
   }
 
-  @media ${theme.media.mobile} {
+  @media ${theme.media.tablet} {
     align-items: flex-start;
   }
 `
@@ -64,7 +65,7 @@ const MainTitle = styled.div`
     text-align: center;
   }
 
-    @media ${theme.media.mobile} {
+    @media ${theme.media.tablet} {
       text-align: left;
     }
     
@@ -76,8 +77,8 @@ const MainTitle = styled.div`
 
 const PhotoWrapper = styled.div`
   position: relative;
-  left: -115px;
-  top: 10px;
+  left: -125px;
+  top: 40px;
   z-index: 0;
 
   @media ${theme.media.desktop1} {
@@ -88,19 +89,19 @@ const PhotoWrapper = styled.div`
     position: relative;
     left: 15px;
   }
-  
+
   &::before {
     content: "";
     display: inline-block;
-    width: 560px;
-    height: 560px;
+    width: 570px;
+    height: 570px;
     background: #e7e7e7;
     transform: rotate(-8deg);
-    
+
     position: absolute;
     z-index: -1;
 
-    @media ${theme.media.mobile} {
+    @media ${theme.media.tablet} {
       width: 300px;
       height: 300px;
     }
@@ -108,15 +109,46 @@ const PhotoWrapper = styled.div`
 `
 
 const Photo = styled.img`
-  width: 560px;
-  height: 560px;
+  width: 570px;
+  height: 570px;
   object-fit: cover;
-  transform: rotate(10deg);
+  transform: rotate(7.5deg);
   opacity: 0.9;
-  border: red solid 1px;
+  //border: red solid 1px;
 
-  @media ${theme.media.mobile} {
-    width: 300px;
-    height: 300px;
+  @media ${theme.media.tablet} {
+    max-width: 300px;
+    max-height: 300px;
   }
 `
+
+// const PhotoWrapper = styled.div`
+//   position: relative;
+//   z-index: 0;
+//   max-width: 570px;
+//   min-width: 300px;
+//   width: 100%;
+//   left: -100px;
+//
+//   &::before {
+//     content: "";
+//     position: absolute;
+//     display: inline-block;
+//     width: 100%;
+//     height: 100%;
+//     background: #e7e7e7;
+//     transform: rotate(-8deg);
+//     z-index: -1;
+//     inset: 0;
+//   }
+// `
+//
+// const Photo = styled.img`
+//   //width: 100%;
+//   width: 570px;
+//   object-fit: cover;
+//   transform: rotate(10deg);
+//   opacity: 0.9;
+//
+//   border: red solid 1px;
+// `
