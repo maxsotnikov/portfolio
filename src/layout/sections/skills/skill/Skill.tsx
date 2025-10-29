@@ -4,7 +4,6 @@ import {theme} from "../../../../styles/Theme.ts";
 import {font} from "../../../../styles/Common.ts";
 
 type SkillProps = {
-  number: string
   title: string
   text: string
 }
@@ -12,41 +11,26 @@ type SkillProps = {
 export const Skill = (props: SkillProps) => {
   return (
     <StyledSkill>
-      <FlexWrapper gap="35px">
-        <NumberWrapper>
-          <SkillNumber>{props.number}</SkillNumber>
-        </NumberWrapper>
-        <FlexWrapper direction="column" gap="5px">
-          <SkillTitle>{props.title}</SkillTitle>
-          <SkillDescription>{props.text}</SkillDescription>
-        </FlexWrapper>
+      <FlexWrapper direction="column" gap="5px">
+        <SkillTitle>{props.title}</SkillTitle>
+        <SkillDescription>{props.text}</SkillDescription>
       </FlexWrapper>
     </StyledSkill>
   );
 };
 
-const StyledSkill = styled.div`
-  
-  & > ${FlexWrapper} {
-    @media ${theme.media.mobile} {
-      gap: 25px;
-    }
-  }
-`
-
-const NumberWrapper = styled.div`
-  
-`
-
-const SkillNumber = styled.span`
-  display: block;
-  margin-top: 17px;
-  ${font({weight: 100, color: theme.colors.evenFont, Fmax: 70, Fmin: 45})}
-  max-width: 90px;
+const StyledSkill = styled.li`
+  counter-increment: skills 1;
+  position: relative;
+  display: flex;
+  padding-left: 100px;
     
-  @media ${theme.media.desktop3} {
-    min-width: 90px;
-    max-width: none;
+  &::after {
+    content: counter(skills, decimal-leading-zero) ".";
+    position: absolute;
+    left: 0;
+    right: 0;
+    top: 0;
   }
 `
 
@@ -55,5 +39,11 @@ const SkillTitle = styled.h3`
 `
 
 const SkillDescription = styled.p`
-  ${font({weight: 200, color: theme.colors.evenFont, lineHeight: 1.2, Fmax: 18, Fmin: 14})}
+  ${font({
+    weight: 200,
+    color: theme.colors.evenFont,
+    lineHeight: 1.2,
+    Fmax: 18,
+    Fmin: 14
+  })}
 `

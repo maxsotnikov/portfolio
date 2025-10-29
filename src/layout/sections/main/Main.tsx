@@ -118,5 +118,5 @@ const Photo = styled.img`
   object-fit: cover;
   transform: rotate(7.5deg);
   opacity: 0.9;
-  border: red solid 1px;
+  //border: red solid 1px;
 `
