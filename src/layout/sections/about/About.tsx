@@ -7,7 +7,7 @@ import {theme} from "../../../styles/Theme.ts";
 
 export const About = () => {
   return (
-    <StyledAbout>
+    <StyledAbout id={'about'}>
       <Container>
         <AboutWrapper>
           <LeftColumnWrapper>

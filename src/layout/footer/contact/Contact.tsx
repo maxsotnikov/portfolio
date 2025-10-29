@@ -1,17 +1,31 @@
 import styled from "styled-components";
 import {FlexWrapper} from "../../../components/FlexWrapper.ts";
 import {Logo} from "../../../components/logo/Logo.tsx";
-import {Navigation} from "../../../components/navigation/Navigation.tsx";
+import {Menu} from "../../../components/navigation/Menu.tsx";
 import {theme} from "../../../styles/Theme.ts";
 
-const items = ['Projects', 'About', 'Digital Assets']
+// const items = ['Projects', 'About', 'Digital Assets']
+const items = [
+  {
+    title: "Projects",
+    href: "projects"
+  },
+  {
+    title: "About",
+    href: "about"
+  },
+  {
+    title: "Digital Assets",
+    href: "digital-assets"
+  }
+]
 
 export const Contact = () => {
   return (
     <StyledContact>
       <NavigationWrapper>
         <Logo/>
-        <Navigation navigationItems={items}/>
+        <Menu menuItems={items}/>
       </NavigationWrapper>
       <SubscribeWrapper>
         <TitleForm>Subscribe to my emailing list</TitleForm>

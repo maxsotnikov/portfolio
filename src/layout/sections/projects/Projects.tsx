@@ -10,7 +10,7 @@ import {theme} from "../../../styles/Theme.ts";
 
 export const Projects = () => {
   return (
-    <StyledProjects>
+    <StyledProjects id={'projects'}>
       <Container>
         <SectionTitle>My<br/> projects</SectionTitle>
         <FlexWrapper direction="column" gap='80px'>

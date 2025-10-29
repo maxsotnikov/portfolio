@@ -1,15 +1,21 @@
 import styled from "styled-components";
 import {theme} from "../../styles/Theme.ts";
 import {font} from "../../styles/Common.ts";
+import {Link} from "react-scroll";
 
-export const Navigation = (props: { navigationItems: Array<string> }) => {
+type MenuItemProps = {
+  title: string;
+  href: string;
+}
+
+export const Menu = (props: { menuItems: Array<MenuItemProps> }) => {
   return (
     <Nav>
       <ul>
-        {props.navigationItems.map((item) => {
+        {props.menuItems.map((item, index) => {
           return (
-            <li>
-              <Link href="">{item}</Link>
+            <li key={index}>
+              <MenuLink to={item.href} smooth={true}>{item.title}</MenuLink>
             </li>
           )
         })}
@@ -24,13 +30,15 @@ const Nav = styled.nav`
     
     li {
      display: flex;
+      cursor: pointer;
     }
   }
 `
 
-const Link = styled.a`
+const MenuLink = styled(Link)`
   padding: 8px 20px;
   ${font({weight: 400, color: theme.colors.titleFont, Fmax: 16, Fmin: 14})}
+  transition: ${theme.animations.transition};
 
   &:hover {
     background-color: ${theme.colors.titleFont};

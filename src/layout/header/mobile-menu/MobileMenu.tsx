@@ -3,7 +3,12 @@ import {theme} from "../../../styles/Theme.ts";
 import {MobileSocialMedia} from "./MobileSocialMedia.tsx";
 import {useState} from "react";
 
-export const MobileMenu = (props: { navigationItems: Array<string> }) => {
+type MobileMenuItemProps = {
+  title: string;
+  href: string;
+}
+
+export const MobileMenu = (props: { menuItems: Array<MobileMenuItemProps> }) => {
   const [menuIsOpen, setmenuIsOpen] = useState(false)
   const onBurgerBtnClick = () => {setmenuIsOpen(!menuIsOpen)}
   return (
@@ -13,10 +18,10 @@ export const MobileMenu = (props: { navigationItems: Array<string> }) => {
       </BurgerButton>
       <MobileMenuPopup isOpen={menuIsOpen} onClick={ () => {(setmenuIsOpen(false))}}>
         <Menu>
-          {props.navigationItems.map((item) => {
+          {props.menuItems.map((item) => {
             return (
               <li>
-                <Link href="">{item}</Link>
+                <MenuLink href={`#${item.href}`}>{item.title}</MenuLink>
               </li>
             )
           })}
@@ -36,19 +41,21 @@ const StyledMobileMenu = styled.nav`
 `
 
 const BurgerButton = styled.button<{ isOpen: boolean }>`
-  position: relative;
+  position: fixed;
   width: 24px;
   height: 24px;
-  //top: 34px;
+  top: 13px;
+  right: 22px;
   z-index: 100;
 
   span {
-    //display: block;
     width: 18px;
     height: 1px;
     background-color: #292D32;
     border-radius: 1px;
     position: absolute;
+    transform: translateY(-50%);
+    transition: ${theme.animations.transitionMobileBtn};
 
   ${(props) => props.isOpen && css<{isOpen: boolean}>`
     background-color: rgba(255, 255, 255, 0);
@@ -56,7 +63,6 @@ const BurgerButton = styled.button<{ isOpen: boolean }>`
 
   &::before {
     content: "";
-    //display: block;
     width: 18px;
     height: 1px;
     background-color: #292D32;
@@ -64,6 +70,7 @@ const BurgerButton = styled.button<{ isOpen: boolean }>`
     position: absolute;
     transform: translateY(-5px);
     inset: 0;
+    transition: ${theme.animations.transitionMobileBtn};
     
     ${(props) => props.isOpen && css<{isOpen: boolean}>`
     transform: rotate(-45deg) translateY(0);
@@ -72,7 +79,6 @@ const BurgerButton = styled.button<{ isOpen: boolean }>`
     
   &::after {
     content: "";
-    //display: inline-block;
     width: 18px;
     height: 1px;
     background-color: #292D32;
@@ -80,6 +86,7 @@ const BurgerButton = styled.button<{ isOpen: boolean }>`
     position: absolute;
     transform: translateY(5px);
     inset: 0;
+    transition: ${theme.animations.transitionMobileBtn};
       
     ${(props) => props.isOpen && css<{isOpen: boolean}>`
       transform: rotate(45deg) translateY(0);
@@ -89,17 +96,20 @@ const BurgerButton = styled.button<{ isOpen: boolean }>`
 `
 
 const MobileMenuPopup = styled.div<{ isOpen: boolean }>`
-  position: absolute;
+  //display: none;
+  position: fixed;
   inset: 0;
   z-index: 10;
   background-color: ${theme.colors.oddBg};
-  display: none;
+  display: flex;
+  flex-direction: column;
+  gap: 25px;
+  transform: translatex(100%);
+  transition: 1s ease-in-out;
+  padding: 55px 25px 30px;
 
   ${(props) => props.isOpen && css<{ isOpen: boolean }>`
-    padding: 55px 25px 30px;
-    display: flex;
-    flex-direction: column;
-    gap: 25px;
+    transform: translateX(0);
   `}
 `
 
@@ -116,7 +126,7 @@ const Menu = styled.ul`
   }
 `
 
-const Link = styled.a`
+const MenuLink = styled.a`
   font-family: "Epilogue", sans-serif;
   font-weight: 400;
   font-size: 16px;
@@ -126,7 +136,8 @@ const Link = styled.a`
   display: inline-block;
   width: 100%;
   text-align: left;
-
+  transition: ${theme.animations.transition};
+  
   &:hover {
     background-color: ${theme.colors.titleFont};
     color: ${theme.colors.evenFont};

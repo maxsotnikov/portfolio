@@ -25,6 +25,7 @@ export const GlobalStyles = createGlobalStyle`
   a, a:link, a:visited  {
     text-decoration: none;
     color: inherit;
+    cursor: pointer;
   }
   
   /* Common */
