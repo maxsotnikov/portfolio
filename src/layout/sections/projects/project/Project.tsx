@@ -30,8 +30,6 @@ export const Project = (props: ProjectProps) => {
 };
 
 const StyledProject = styled.article<{img: string}>`
-  //width: 100%;
-  //height: 445px;
   background-image: url(${props => props.img});
   background-size: cover;
   background-position: center;
@@ -106,4 +104,8 @@ const Link = styled.a`
   display: flex;
   align-items: center;
   gap: 4px;
+  
+  &:hover svg{
+      transform: translateX(10px);
+    }
 `

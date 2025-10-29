@@ -30,7 +30,6 @@ export const Main = () => {
 };
 
 const StyledMain = styled.section`
-  //min-height: 100vh;
   padding: 50px 0 135px;
   display: flex;
 
@@ -43,13 +42,12 @@ const MainWrapper = styled.div`
   display: flex;
   height: 100%;
   align-items: center;
-  //justify-content: space-between;
   
-  @media ${theme.media.desktop1} {
+  @media ${theme.media.desktop2} {
     flex-direction: column;
   }
 
-  @media ${theme.media.tablet} {
+  @media ${theme.media.mobile} {
     align-items: flex-start;
   }
 `
@@ -65,11 +63,13 @@ const MainTitle = styled.div`
       lineHeight: 1.1,
       Fmax: 150,
       Fmin: 75
-    })} @media ${theme.media.desktop1} {
+    })} 
+    
+    @media ${theme.media.desktop2} {
     text-align: center;
   }
 
-    @media ${theme.media.tablet} {
+    @media ${theme.media.mobile} {
       text-align: left;
     }
 
@@ -88,47 +88,35 @@ const PhotoWrapper = styled.div`
   width: 100%;
   flex-shrink: 0;
 
-  @media ${theme.media.desktop1} {
-    position: static;
-  }
-
-  @media ${theme.media.desktop1} {
-    position: relative;
-    left: 15px;
+  @media ${theme.media.desktop2} {
+    left: 0;
   }
 
   @media ${theme.media.tablet} {
-    //max-width: 300px;
-    //max-height: 300px;
     width: 90%;
+  }
+
+  @media ${theme.media.mobile} {
+    width: 85%;
+    left: 35px;
   }
 
   &::before {
     content: "";
-    //display: inline-block;
-    //width: 570px;
-    //height: 570px;
+    width: 100%;
     inset: 0;
     background: #e7e7e7;
     transform: rotate(-8deg);
 
     position: absolute;
     z-index: -1;
-
-
   }
 `
 
 const Photo = styled.img`
   width: 100%;
-  //height: 100%;
   object-fit: cover;
   transform: rotate(7.5deg);
   opacity: 0.9;
-  //border: red solid 1px;
-
-    // @media ${theme.media.tablet} {
-  //   max-width: 300px;
-  //   max-height: 300px;
-  // }
+  border: red solid 1px;
 `

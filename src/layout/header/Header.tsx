@@ -6,8 +6,11 @@
   import {theme} from "../../styles/Theme.ts";
   import {MobileMenu} from "./mobile-menu/MobileMenu.tsx";
 
-  // const items = ["Projects", "About", "Digital Assets", "Let’s Talk"]
   const items = [
+    {
+      title: "Skills",
+      href: "skills"
+    },
     {
       title: "Projects",
       href: "projects"
@@ -15,10 +18,6 @@
     {
       title: "About",
       href: "about"
-    },
-    {
-      title: "Digital Assets",
-      href: "digital-assets"
     },
     {
       title: "Let's Talk",
@@ -26,8 +25,11 @@
     }
   ]
 
-  // const mobileItems = ['Projects', 'About', 'Digital Assets']
   const mobileItems = [
+    {
+      title: "Skills",
+      href: "skills"
+    },
     {
       title: "Projects",
       href: "projects"
@@ -35,11 +37,7 @@
     {
       title: "About",
       href: "about"
-    },
-    {
-      title: "Digital Assets",
-      href: "digital-assets"
-    },
+    }
   ]
 
   export const Header = () => {
@@ -63,11 +61,6 @@
 
   const StyledHeader = styled.header`
     padding: 20px 0;
-    //position: fixed;
-    //top: 0;
-    //right: 0;
-    //left: 0;
-    //z-index: 1000;
     
     @media ${theme.media.tablet} {
       padding: 0;

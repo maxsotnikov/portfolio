@@ -10,14 +10,14 @@ export const About = () => {
     <StyledAbout id={'about'}>
       <Container>
         <AboutWrapper>
-          <LeftColumnWrapper>
+          <MainColumnWrapper>
             <AboutTitleWrapper title={'I look at usual things with my unsual eyes.'} />
             <FirstPhoto src={Image} alt="" />
-          </LeftColumnWrapper>
-          <RightColumnWrapper>
+          </MainColumnWrapper>
+          <DescriptionColumnWrapper>
             <AboutDescription/>
             <SecondPhoto src={Image} alt="" />
-          </RightColumnWrapper>
+          </DescriptionColumnWrapper>
         </AboutWrapper>
       </Container>
     </StyledAbout>
@@ -27,7 +27,7 @@ export const About = () => {
 const StyledAbout = styled.section`
   padding: 110px 0 205px;
   
-  @media ${theme.media.desktop2} {
+  @media ${theme.media.desktop1} {
     padding: 50px 0 95px;
   }
 `
@@ -36,14 +36,15 @@ const AboutWrapper = styled.div`
   display: flex;
   justify-content: space-between;
   flex-wrap: wrap;
+  gap: 20px;
 `
 
-const LeftColumnWrapper = styled.div`
+const MainColumnWrapper = styled.div`
   display: flex;
   flex-direction: column;
   gap: 238px;
   
-  @media ${theme.media.desktop2} {
+  @media ${theme.media.desktop1} {
     gap: 30px;
   }
 `
@@ -54,16 +55,19 @@ const FirstPhoto  = styled.img`
   object-fit: cover;
 `
 
-const RightColumnWrapper = styled.div`
+const DescriptionColumnWrapper = styled.div`
   display: flex;
   flex-direction: column;
   gap: 310px;
   
-  @media ${theme.media.desktop2} {
+  @media ${theme.media.desktop1} {
     padding-top: 40px;
     gap: 60px;
+    align-items: flex-end;
+  }
+
+  @media ${theme.media.tablet} {
     align-items: center;
-    
   }
 `
 

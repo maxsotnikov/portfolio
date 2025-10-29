@@ -18,7 +18,7 @@ export const GlobalStyles = createGlobalStyle`
   
   body {
     font-family: "Epilogue",sans-serif;
-    //min-width: 375px;
+    min-width: 375px;
   }
   
   /* Links */

@@ -40,9 +40,11 @@ export const Projects = () => {
 
 const StyledProjects = styled.section`
   padding: 170px 0;
-  
-  ${FlexWrapper} {
-    @media ${theme.media.tablet} {
+
+  @media ${theme.media.tablet} {
+    padding: 70px 0;
+    
+    ${FlexWrapper} {
       gap: 60px;
     }
   }

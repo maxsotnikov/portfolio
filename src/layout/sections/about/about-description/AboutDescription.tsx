@@ -14,25 +14,26 @@ export const AboutDescription = () => {
   );
 };
 
-const StyledAboutDescription = styled.p`
+const StyledAboutDescription = styled.div`
   font-family: 'Roboto', sans-serif;
   font-weight: 400;
   font-size: 18px;
   line-height: 1.5;
   color: ${theme.colors.evenFont};
-  max-width: 437px;
+  max-width: 438px;
     
-  @media ${theme.media.desktop2} {
-    margin-bottom: 0;
+  @media ${theme.media.desktop1} {
+    max-width: none;
+    width: 100%;
   }
 `
 
 const Text = styled.p`
   margin-bottom: 20px;
   
-  @media ${theme.media.desktop2} {
-    &:last-child {
-      margin-bottom: 0;
-    }
-  }
+  // @media ${theme.media.desktop1} {
+  //   &:last-child {
+  //     margin-bottom: 0;
+  //   }
+  // }
 `

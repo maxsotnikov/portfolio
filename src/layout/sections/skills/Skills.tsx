@@ -4,8 +4,8 @@ import {theme} from "../../../styles/Theme.ts";
 
 export const Skills = () => {
   return (
-    <StyledSkills>
-      <SkillWrapper   >
+    <StyledSkills id="skills">
+      <SkillWrapper>
         <Skill number={'01.'}
                title={'React'}
                text={'consectetur adipiscing elit duis tristique sollicitudin nibh sit amet commodo nulla facilisi nullam vehicula ipsum a arcu cursus vitae congue'}
@@ -51,7 +51,7 @@ const SkillWrapper = styled.div`
   row-gap: 60px;
   column-gap: 20px;
   
-  @media ${theme.media.desktop2} {
+  @media ${theme.media.desktop1} {
     grid-template-columns: repeat(2, 1fr);
   }
 
