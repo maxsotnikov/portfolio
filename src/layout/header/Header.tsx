@@ -1,6 +1,6 @@
   import styled from "styled-components";
   import {Logo} from "../../components/logo/Logo.tsx";
-  import {Menu} from "../../components/navigation/Menu.tsx";
+  import {Menu} from "../../components/menu/Menu.tsx";
   import {Container} from "../../components/Container.ts";
   import {FlexWrapper} from "../../components/FlexWrapper.ts";
   import {theme} from "../../styles/Theme.ts";
@@ -79,7 +79,7 @@
     @media ${theme.media.tablet} {
       display: flex;
       align-items: center;
-      gap: 35px;
+      gap: 15px;
     }
   `
 

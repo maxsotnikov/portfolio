@@ -1,7 +1,8 @@
 import styled from "styled-components";
 import {theme} from "../../../../styles/Theme.ts";
 import {font} from "../../../../styles/Common.ts";
-import {ArrowBtn} from "../../../../components/ArrowBtn.tsx";
+import {ArrowBtn} from "../../../../components/icons/ArrowBtn.tsx";
+
 
 type ProjectProps = {
   img: string;

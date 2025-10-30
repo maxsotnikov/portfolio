@@ -45,12 +45,12 @@ const StyledSkills = styled.section`
 `
 
 const SkillWrapper = styled.ol`
-  max-width: 2200px;
+  max-width: 5400px;
   margin: 0 auto;
   display: grid;
   grid-template-columns: repeat(3, 1fr);
   row-gap: 60px;
-  column-gap: 60px;
+  column-gap: 20px;
   counter-reset: skills 0;
   ${font({weight: 100, color: theme.colors.evenFont, Fmax: 70, Fmin: 45})};
   list-style: none;

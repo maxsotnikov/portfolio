@@ -1,7 +1,7 @@
 import styled, {css} from "styled-components";
 import {theme} from "../../../styles/Theme.ts";
-import {MobileSocialMedia} from "./MobileSocialMedia.tsx";
 import {useState} from "react";
+import {SocialLinks} from "../../../components/social-links/SocialLinks.tsx";
 
 type MobileMenuItemProps = {
   title: string;
@@ -26,7 +26,7 @@ export const MobileMenu = (props: { menuItems: Array<MobileMenuItemProps> }) => 
             )
           })}
         </Menu>
-        <MobileSocialMedia/>
+        <SocialLinks/>
       </MobileMenuPopup>
     </StyledMobileMenu>
   );
@@ -36,7 +36,9 @@ const StyledMobileMenu = styled.nav`
   display: none ;
   
   @media ${theme.media.tablet} {
-    display: block;
+    display: flex;
+    width: 24px;
+    height: 24px;
   }
 `
 
@@ -44,8 +46,6 @@ const BurgerButton = styled.button<{ isOpen: boolean }>`
   position: fixed;
   width: 24px;
   height: 24px;
-  top: 13px;
-  right: 22px;
   z-index: 100;
 
   span {
@@ -54,6 +54,7 @@ const BurgerButton = styled.button<{ isOpen: boolean }>`
     background-color: #292D32;
     border-radius: 1px;
     position: absolute;
+    right: 2px;
     transform: translateY(-50%);
     transition: ${theme.animations.transitionMobileBtn};
 

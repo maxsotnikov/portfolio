@@ -1,5 +1,4 @@
 import styled from "styled-components";
-import {FlexWrapper} from "../../../../components/FlexWrapper.ts";
 import {theme} from "../../../../styles/Theme.ts";
 import {font} from "../../../../styles/Common.ts";
 
@@ -11,10 +10,8 @@ type SkillProps = {
 export const Skill = (props: SkillProps) => {
   return (
     <StyledSkill>
-      <FlexWrapper direction="column" gap="5px">
         <SkillTitle>{props.title}</SkillTitle>
         <SkillDescription>{props.text}</SkillDescription>
-      </FlexWrapper>
     </StyledSkill>
   );
 };
@@ -23,14 +20,31 @@ const StyledSkill = styled.li`
   counter-increment: skills 1;
   position: relative;
   display: flex;
-  padding-left: 100px;
+  flex-direction: column;
+  gap:5px;
+  padding-left: 110px;
     
   &::after {
     content: counter(skills, decimal-leading-zero) ".";
     position: absolute;
     left: 0;
-    right: 0;
-    top: 0;
+    top: 10px;
+  }
+
+  @media ${theme.media.desktop3} {
+    padding-left: 20%;
+  }
+
+  @media ${theme.media.desktop1} {
+    padding-left: 100px;
+  }
+
+  @media ${theme.media.tablet} {
+    padding-left: 90px;
+  }
+  
+  @media ${theme.media.mobile} {
+    padding-left: 80px;
   }
 `
 

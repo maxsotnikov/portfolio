@@ -1,11 +1,14 @@
 import styled from "styled-components";
 import {FlexWrapper} from "../../../components/FlexWrapper.ts";
 import {Logo} from "../../../components/logo/Logo.tsx";
-import {Menu} from "../../../components/navigation/Menu.tsx";
+import {Menu} from "../../../components/menu/Menu.tsx";
 import {theme} from "../../../styles/Theme.ts";
 
-// const items = ['Projects', 'About', 'Digital Assets']
 const items = [
+  {
+    title: "Skills",
+    href: "skills"
+  },
   {
     title: "Projects",
     href: "projects"
