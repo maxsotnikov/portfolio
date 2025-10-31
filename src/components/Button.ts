@@ -2,7 +2,7 @@ import {font} from "../styles/Common.ts";
 import styled from "styled-components";
 import {theme} from "../styles/Theme.ts";
 
-export const Button = styled.button<{ isOpen: boolean }>`
+export const Button = styled.button<{ isOpen?: boolean }>`
   ${font({weight: 400, lineHeight: 1.5, color: theme.colors.evenFont, Fmax: 16, Fmin: 16})}
   padding: 8px 20px;
   transition: ${theme.animations.transition};
