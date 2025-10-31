@@ -1,8 +1,9 @@
 import styled from "styled-components";
-import {FlexWrapper} from "../../../components/FlexWrapper.ts";
 import {Logo} from "../../../components/logo/Logo.tsx";
 import {Menu} from "../../../components/menu/Menu.tsx";
 import {theme} from "../../../styles/Theme.ts";
+import {font} from "../../../styles/Common.ts";
+import {ContactForm} from "../../header/contact-form/ContactForm.tsx";
 
 const items = [
   {
@@ -16,10 +17,6 @@ const items = [
   {
     title: "About",
     href: "about"
-  },
-  {
-    title: "Digital Assets",
-    href: "digital-assets"
   }
 ]
 
@@ -31,12 +28,9 @@ export const Contact = () => {
         <Menu menuItems={items}/>
       </NavigationWrapper>
       <SubscribeWrapper>
-        <TitleForm>Subscribe to my emailing list</TitleForm>
-        <FlexWrapper gap={'16px'} wrap={'wrap'}>
-          <Field placeholder={'Enter your email'}/>
-          <Sybscribe type={'submit'}>Subscribe</Sybscribe>
-        </FlexWrapper>
-        <PrivacyPolicy>By subscribing you agree to with our <a href={'#'}>Privacy Policy</a></PrivacyPolicy>
+        <ContactTitle>Let’s work together</ContactTitle>
+        <ContactDescription>I’m available for freelance work. Have any projects in your mind? Just feel free to contact me</ContactDescription>
+        <ContactForm/>
       </SubscribeWrapper>
     </StyledContact>
   );
@@ -48,6 +42,7 @@ const StyledContact = styled.div`
   flex-wrap: wrap;
   position: relative;
   margin-bottom: 130px;
+  gap: 20px;
   
   @media ${theme.media.tablet} {
     margin-bottom: 45px;
@@ -89,43 +84,14 @@ const SubscribeWrapper = styled.div`
   display: flex;
   flex-direction: column;
   gap: 15px;
-  
-  // @media ${theme.media.tablet} {
-  //   padding: 26px 0 22px 20px;
-  // }
+  max-width: 500px;
 `
 
-const TitleForm = styled.h4`
-  font-weight: 700;
-  font-size: 16px;
-  line-height: 1.5;
+const ContactTitle = styled.h3`
+  ${font({weight: 800, color: theme.colors.oddFont, Fmax: 30, Fmin: 22})}
+  text-align: center;
 `
 
-const Field = styled.input`
-  border: 1px solid #000;
-  padding: 12px;
-  
-  @media ${theme.media.mobile2} {
-    width: 100%;
-  }
-`
-
-const Sybscribe = styled.button`
-  border: 1px solid #000;
-  padding: 12px 24px;
-  
-  &:hover {
-    background-color: ${theme.colors.titleFont};
-    color: ${theme.colors.evenFont};
-  }
-`
-
-const PrivacyPolicy = styled.span`
-  font-weight: 400;
-  font-size: 12px;
-  line-height: 1.5;
-  
-  a:link {
-    text-decoration: underline;
-  }
+const ContactDescription = styled.p`
+  ${font({weight: 400, color: theme.colors.oddFont, Fmax: 16, Fmin: 16})}
 `

@@ -5,6 +5,7 @@
   import {FlexWrapper} from "../../components/FlexWrapper.ts";
   import {theme} from "../../styles/Theme.ts";
   import {MobileMenu} from "./mobile-menu/MobileMenu.tsx";
+  import {ContactForm} from "./contact-form/ContactForm.tsx";
 
   const items = [
     {
@@ -18,10 +19,6 @@
     {
       title: "About",
       href: "about"
-    },
-    {
-      title: "Let's Talk",
-      href: "#"
     }
   ]
 
@@ -47,10 +44,11 @@
           <FlexWrapper justify="space-between" align="center">
             <Logo />
             <NavigationWrapper>
+              <ContactForm/>
               <Menu menuItems={items} />
             </NavigationWrapper>
             <MobileWrapper>
-              <LetsTalkLink>Let's Talk</LetsTalkLink>
+              <ContactForm/>
               <MobileMenu menuItems={mobileItems}></MobileMenu>
             </MobileWrapper>
           </FlexWrapper>
@@ -68,9 +66,13 @@
   `
 
   const NavigationWrapper = styled.div`
-      @media ${theme.media.tablet} {
-        display: none;
-      }
+    display: flex;
+    flex-direction: row-reverse;
+    gap: 30px;
+    
+    @media ${theme.media.tablet} {
+      display: none;
+    }
   `
 
   const MobileWrapper = styled(FlexWrapper)`
@@ -80,23 +82,5 @@
       display: flex;
       align-items: center;
       gap: 15px;
-    }
-  `
-
-  const LetsTalkLink = styled.a`
-    display: none;
-    @media ${theme.media.tablet} {
-      display: block;
-      font-weight: 400;
-      font-size: 16px;
-      line-height: 1.5;
-      padding: 8px 20px;
-      cursor: pointer;
-      transition: ${theme.animations.transition};
-  
-      &:hover {
-        background-color: ${theme.colors.titleFont};
-        color: ${theme.colors.evenFont};
-      }
     }
   `

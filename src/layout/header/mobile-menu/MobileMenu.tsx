@@ -46,7 +46,7 @@ const BurgerButton = styled.button<{ isOpen: boolean }>`
   position: fixed;
   width: 24px;
   height: 24px;
-  z-index: 100;
+  z-index: 11;
 
   span {
     width: 18px;
@@ -97,7 +97,6 @@ const BurgerButton = styled.button<{ isOpen: boolean }>`
 `
 
 const MobileMenuPopup = styled.div<{ isOpen: boolean }>`
-  //display: none;
   position: fixed;
   inset: 0;
   z-index: 10;
@@ -123,7 +122,7 @@ const Menu = styled.ul`
     width: 100%;
     border-bottom: #828282 solid 1px;
     position: relative;
-    z-index: 100;
+    z-index: 11;
   }
 `
 
